@@ -6,7 +6,8 @@
     <parent>
         <groupId>tech.andy</groupId>
         <artifactId>FastBoot</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.1-RELEASE</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>FastBoot-Core</artifactId>

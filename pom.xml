@@ -6,14 +6,14 @@
 
     <groupId>tech.andy</groupId>
     <artifactId>FastBoot</artifactId>
-    <version>${fast-boot.version}</version>
+    <version>0.1-RELEASE</version>
     <packaging>pom</packaging>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <fast-boot.version>1.0-SNAPSHOT</fast-boot.version>
+        <fast-boot.version>0.1-RELEASE</fast-boot.version>
         <spring-boot.version>3.3.5</spring-boot.version>
     </properties>
 
@@ -22,16 +22,48 @@
         <module>FastBoot-Core</module>
     </modules>
 
+    <dependencyManagement>
+        <dependencies>
+            <!--    Spring Boot 3 依赖    -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <build>
         <plugins>
             <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
                 <configuration>
                     <source>17</source>
                     <target>17</target>
                 </configuration>
+                <goals>
+                    <goal>compile</goal>
+                    <goal>testCompile</goal>
+                </goals>
             </plugin>
         </plugins>
     </build>

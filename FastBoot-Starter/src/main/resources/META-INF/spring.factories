@@ -1,2 +1,3 @@
 # Auto Configure the QuickAutoConfiguration class when the application starts
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=tech.andy.starter.QuickAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  tech.andy.starter.QuickAutoConfiguration
